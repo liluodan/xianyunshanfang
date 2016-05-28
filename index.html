@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>闲云山房</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/lightbox.css" />
+<link rel="stylesheet" href="css/animate.css" />
+<style>
+.section { text-align: center; font: 50px "Microsoft Yahei"; color: #fff;}
+.section{background-image: url(images/s1.jpg);-webkit-background-size: cover;}
+.s2{background-image: url(images/s2.jpg);}
+.s3{background-image: url(images/s3.jpg);}
+.s4{background-image: url(images/s4.jpg);}
+.s5{background-image: url(images/s5.jpg);}
+.s6{background-image: url(images/s6.jpg);}
+.s7{background-image: url(images/s7.jpg);}
+.s8{background-image: url(images/s8.jpg);}
+*{margin:0;padding: 0;}
+ul{list-style: none;}
+#menu{ height: 60px;width:100%;position:fixed;top: 0 ;left:0; background-color:rgba(5,40,0,.3) ;background: url(images/lgbj_01.png) no-repeat; left center;background-size:100% 100%;z-index: 300;}
+#menu ul{float:right;}
+#menu li{float:left;width:85px;}
+#menu li a{text-decoration: none;color:#fff;font-family: "微软雅黑";font-size: 14px;cursor: pointer;text-align: center;display: block;padding-top:30px;}
+#menu li a:hover{height:60px;line-height: 60px;padding:0;background-color: rgba(0,0,0,.5);}
+#menu .banben{display: block;text-decoration: none;color:#fff;float:right;font-family: "微软雅黑";font-size: 12px;margin-right: 35px;}
+.s1 #menu .banben span{color:#c09556;}
+.num-1 img{position: absolute;right:80px;bottom:50px;}
+.num-2 img{position: absolute;left:47%; bottom:5px;cursor: pointer;transition: all 1s;}
+.num-2 img:hover{transform: scale(1.3,1.3);}
+.num-s2 img{position: absolute;left:20%;top:60px;display: none;}
+.nav_bar{width:100%;height:50px;line-height: 50px;background-color: rgba(0,0,0,.6);position:fixed;left:0;top:0;z-index:200; display: none;}
+.nav_bar ul{float:right;margin-right:150px;}
+.nav_bar ul li{float:left;width:85px;text-align: center;}
+.nav_bar ul li a{text-decoration: none;color:#fff;font-family: "微软雅黑";font-size: 14px;vertical-align: middle;}
+.s2 .four-pic{height:182px;width:250px;background-color: rgba(0,0,0,.7);border-radius: 5px;position: absolute;right:250px;bottom:65px;display: none;}
+.s2 .four-pic img{float:left;width:100px;height:70px;margin:8px 10px;border:2px solid #fff;transition: all 1s;cursor: pointer;}
+.s2 .four-pic img:hover{transform: scale(1.2,1.2);}
+.num-s3 img{position: absolute;left:20%;top:80px;display: none;}
+.s3 .four-pic{height:182px;width:375px;position: absolute;left:250px;bottom:65px;display: none;}
+.s4 .four-pic{position: absolute;right:250px;top:130px;display: none;}
+.s5 .num-s2 img{position: absolute;left:30%;top:400px;display: none;}
+.s5 .four-pic{width:125px;position: absolute;left:250px;bottom:65px;display: none;}
+.s6 .num-s2 img{position: absolute;left:48%;top:80px;display: none;}
+.s7 .time{width:800px;height:185px;background-color: rgba(90,140,107,.7);padding-top: 50px;position: absolute;right:200px;top:200px;display: none;}
+.s7 p{text-align: left;margin-left: 50px;font-size: 30px;}
+.s8 .num-s2 img{position: absolute;left:250px;top:380px;}
+.s8 .txt{width:340px;height:200px;background-color: rgba(0,0,0,.7);position: absolute;left:250px;top:150px;display: none;}
+.s8 .txt .container{padding:15px;}
+.s8 .txt h3{font-size: 18px;text-align: left;font-weight: normal;color:#c09556;}
+.s8 .txt p{font-size: 14px;text-align: left;color:#c09556;}
+.s8 .info{position: absolute;right:150px;bottom:70px;display: none;}
+.s8 .info p{font-size: 15px;text-align: left;color:#c09556;}
+.s8 .zongzhi img{position: absolute;right:250px;bottom:170px;}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script>
+    wow = new WOW(
+      {
+        animateClass: 'animated1',
+        offset:       100,
+        callback:     function(box) {
+          console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+        }
+      }
+    );
+    wow.init();
+    document.getElementById('moar').onclick=function() {
+      var section = document.createElement('section');
+      section.className = 'section--purple wow fadeInDown';
+      this.parentNode.insertBefore(section, this);
+    };
+  </script>
+<script>
+$(function(){
+	$("#main").fullpage({
+		sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90','pink','yellow','green','red'],
+//		'navigation': true,
+//		continuousVertical: true,
+		anchors: ['page1', 'page2', 'page3', 'page4','page5','page6','page7','page8'],
+		menu: '#menu',	
+		afterLoad: function(anchorLink, index){
+				if(index==1){
+				$("#menu").show();				
+				}//if ed 
+				if(index==2){
+					$(".s2 .num-s2 img").fadeIn()
+					$(".s2 .four-pic").delay(500).fadeIn()
+				}
+				
+				if(index==3){
+					$(".s3 .num-s3 img").fadeIn()
+					$(".s3 .four-pic").delay(500).fadeIn()
+				}
+				
+				if(index==4){
+					$(".s4.s2 .num-s2 img").fadeIn()
+					$(".s4 .four-pic").delay(500).fadeIn()
+				}
+				
+				if(index==5){
+					$(".s5.s2 .num-s2 img").fadeIn()
+					$(".s5 .four-pic").delay(500).fadeIn()
+				}
+				
+				if(index==6){
+					$(".s6 .num-s2 img").fadeIn()
+					$(".s6 .four-pic").delay(500).fadeIn()
+				}
+				
+				if(index==7){
+					$(".s7 .num-s2 img").fadeIn()
+					$(".s7 .time").delay(500).fadeIn()
+				}
+				
+				if(index==8){
+					$(".s8 .num-s2 img").fadeIn()
+					$(".s8 .txt").delay(500).fadeIn()
+					$(".s8 .info").delay(1000).fadeIn()
+				}
+				},
+				
+		onLeave: function(index, direction){
+				if(index==1){
+				$("#menu").hide();	
+				$(".nav_bar").show();
+				}					
+				}
+	});
+});
+</script>
+</head>
+
+<body>
+	
+<div id="menu">
+				<a href="" class="banben">中文版<span>
+					&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;ENGLISH</span></a>
+		<ul>
+			<li data-menuanchor="page1"><a href="#page1">首页</a></li>
+			<li data-menuanchor="page2"><a href="#page2">世外桃源</a></li>
+			<li data-menuanchor="page3"><a href="#page3">源生原味</a></li>
+			<li data-menuanchor="page4"><a href="#page4">星星作伴</a></li>
+			<li data-menuanchor="page5"><a href="#page5">创想意境</a></li>
+			<li data-menuanchor="page6"><a href="#page6">闲云圣景</a></li>
+			<li data-menuanchor="page7"><a href="#page7">活动</a></li>
+			<li data-menuanchor="page8"><a href="#page8">联系我们</a></li>
+		</ul>
+
+		</div>
+		<div class="nav_bar">
+
+		<ul>
+			<li data-menuanchor="page1"><a href="#page1">首页</a></li>
+			<li data-menuanchor="page2"><a href="#page2">世外桃源</a></li>
+			<li data-menuanchor="page3"><a href="#page3">源生原味</a></li>
+			<li data-menuanchor="page4"><a href="#page4">星星作伴</a></li>
+			<li data-menuanchor="page5"><a href="#page5">创想意境</a></li>
+			<li data-menuanchor="page6"><a href="#page6">闲云圣景</a></li>
+			<li data-menuanchor="page7"><a href="#page7">活动</a></li>
+			<li data-menuanchor="page8"><a href="#page8">联系我们</a></li>
+		</ul>
+		</div>
+<div id="main">
+	<div class="section s1">
+		
+		<div class="num-1"><img src="images/x1_03.png" alt=""/></div>
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+	</div>
+	<div class="section s2">		
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2" class="wow fadeInLeft" data-wow-delay="1s"><img src="images/01_03.png" alt=""/></div>
+		<div class="four-pic">
+			<div class="four-t clearfix">
+				<div class="four-l"><a href="images/20141106133043.jpg"  data-lightbox="road"><img src="images/20141106133043.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133101.jpg"  data-lightbox="road"><img src="images/20141106133101.jpg" alt="" /></a></div>
+			</div>
+			<div class="four-b clearfix">
+				<div class="four-l"><a href="images/20141106133106.jpg"  data-lightbox="road"><img src="images/20141106133106.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133111.jpg"  data-lightbox="road"><img src="images/20141106133111.jpg" alt="" /></a></div>
+			</div>
+		</div>
+	</div>
+	<div class="section s3 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s3"><img src="images/02_03.png" alt="" /></div>
+		<div class="four-pic">
+			<div class="four-t clearfix">
+				<div><a href="images/20141106133124.jpg" data-lightbox="road1"><img src="images/20141106133124.jpg" alt="" /></a></div>
+				<div><a href="images/20141106133129.jpg" data-lightbox="road1"><img src="images/20141106133129.jpg" alt="" /></a></div>
+				<div><a href="images/20141106133134.jpg" data-lightbox="road1"><img src="images/20141106133134.jpg" alt="" /></a></div>
+			</div>
+			<div class="four-b clearfix">
+				<div><a href="images/20141106133139.jpg" data-lightbox="road1"><img src="images/20141106133139.jpg" alt="" /></a></div>
+				<div><a href="images/20141106133144.jpg" data-lightbox="road1"><img src="images/20141106133144.jpg" alt="" /></a></div>
+				<div><a href="images/20141106133159.jpg" data-lightbox="road1"><img src="images/20141106133159.jpg" alt="" /></a></div>
+			</div>
+		</div>
+	</div>
+		<div class="section s4 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2"><img src="images/03_03.png" alt="" /></div>
+		<div class="four-pic">
+			<div class="four-t clearfix">
+				<div class="four-l"><a href="images/20141106133207.jpg" data-lightbox="road2"><img src="images/20141106133207.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133212.jpg" data-lightbox="road2"><img src="images/20141106133212.jpg" alt="" /></a></div>
+			</div>
+			<div class="four-b clearfix">
+				<div class="four-l"><a href="images/20141106133218.jpg" data-lightbox="road2"><img src="images/20141106133218.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133224.jpg" data-lightbox="road2"><img src="images/20141106133224.jpg" alt="" /></a></div>
+			</div>
+		</div>
+	</div>
+		<div class="section s5 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2"><img src="images/05_03.png" alt="" /></div>
+		<div class="four-pic">
+			<div class="four-t clearfix">
+				<div class="four-l"><a href="images/20141106133043.jpg" data-lightbox="road3"><img src="images/20141106133043.jpg" alt="" /></a></div>
+			</div>
+			<div class="four-b clearfix">
+				<div class="four-l"><a href="images/20141106133106.jpg" data-lightbox="road3"><img src="images/20141106133106.jpg" alt="" /></a></div>
+			</div>
+		</div>
+	</div>
+		<div class="section s6 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2"><img src="images/06_03.png" alt="" /></div>
+		<div class="four-pic">
+			<div class="four-t clearfix">
+				<div class="four-l"><a href="images/20141106133043.jpg" data-lightbox="road4"><img src="images/20141106133043.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133101.jpg" data-lightbox="road4"><img src="images/20141106133101.jpg" alt="" /></a></div>
+			</div>
+			<div class="four-b clearfix">
+				<div class="four-l"><a href="images/20141106133106.jpg" data-lightbox="road4"><img src="images/20141106133106.jpg" alt="" /></a></div>
+				<div class="four-r"><a href="images/20141106133111.jpg" data-lightbox="road4"><img src="images/20141106133111.jpg" alt="" /></a></div>
+			</div>
+		</div>
+	</div>
+		<div class="section s7 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2"><img src="images/07_03.png" alt="" /></div>
+		<div class="time">
+			<p>活动时间：</p>
+			<p>12月15日-2月15日</p>
+		</div>
+	</div>
+		<div class="section s8 s2">
+		<div class="num-2"><img src="images/gd_03 (1).png" alt=""/></div>
+		<div class="num-s2"><img src="images/08_03.png" alt="" /></div>
+		<div class="txt">
+			<div class="container">
+				<h3>公司简介</h3>
+				<p>北京叠翠谷旅游开发有限公司全资开发建设的闲云山房项目，位于北京市怀柔区喇叭沟门原始森林自然保护区内，总占地面积3000亩，是集生态养殖、种植、餐饮、住宿、观光、会议、健康养生为一体的综合性度假区。拥有自然景观十多处，特色别墅30栋，餐厅1栋，多功能厅1栋。此生态区是北京仅有的非雾霾环境区域，是大自然赐予我们的天然大氧吧。</p>
+			</div>
+		</div>
+		<div class="info">
+			<p>联系人：张先生</p>
+			<p>联系电话：000000000</p>
+			<p>手机：1317086105</p>
+			<p>地 址：北京市怀柔区喇叭沟门原始森林公园大门口</p>
+		</div>
+		<div class="zongzhi"><img src="images/l1 (1).png" alt="" /></div>
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>
+
+</body>
+</html>
